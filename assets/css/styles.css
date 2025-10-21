@@ -1,0 +1,53 @@
+/* UrbanThread styles. Keep compact and minimal. */
+/* Colors */
+:root{
+  --primary-black: #000000;
+  --accent-teal: #00A896;
+  --neutral-light: #F8F9FA;
+  --neutral-mid: #6C757D;
+  --white: #FFFFFF;
+}
+
+/* Fonts */
+body{ font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#222; background:#fff; margin:0; }
+
+/* Logo mark */
+.logo-mark{
+  display:inline-block; width:40px; height:40px; background:var(--primary-black); color:var(--white); font-weight:700; border-radius:6px; display:flex; align-items:center; justify-content:center;
+}
+
+/* Accent */
+.btn-accent{ background:var(--accent-teal); color:#fff; border:none; }
+.bg-accent{ background:var(--accent-teal)!important; color:#fff !important; }
+
+/* Hero */
+.hero-img{ height:50vh; object-fit:cover; filter:contrast(1.05); }
+
+/* Categories */
+.category-card{ min-width:180px; flex:0 0 auto; border-radius:10px; }
+
+/* Product cards */
+.product-card img{ width:100%; height:220px; object-fit:cover; }
+
+/* Site responsive tweaks */
+@media (max-width:767px){
+  .hero-img{ height:40vh; }
+  .product-card img{ height:180px; }
+}
+
+/* Dark mode */
+body.dark-mode{ background:#0b0b0b; color:#e9ecef; }
+body.dark-mode .navbar, body.dark-mode .card, body.dark-mode .bg-light{ background:#0d0d0d !important; }
+body.dark-mode a{ color: #9feadf; }
+
+/* Small utility */
+.small{ font-size:0.9rem; color:var(--neutral-mid); }
+
+/* Accessibility focus */
+a:focus, button:focus, input:focus{ outline:3px solid rgba(0,168,150,0.15); outline-offset:2px; }
+
+/* Minimal styles for admin */
+.table-actions button{ margin-right:6px; }
+
+/* Lazy load placeholder */
+img[loading="lazy"]{ opacity:0.99; }
