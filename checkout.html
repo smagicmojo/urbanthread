@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — UrbanThread</title>
+  <meta name="description" content="Checkout - UrbanThread" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="light-mode" data-page="checkout">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">UrbanThread</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4">
+    <h3>Checkout</h3>
+    <div class="card p-3">
+      <form id="checkoutForm" novalidate>
+        <!-- Step 1: Shipping -->
+        <section id="step1">
+          <h5>Shipping Address</h5>
+          <div class="row g-2">
+            <div class="col-md-6">
+              <label for="shipName" class="form-label">Full name</label>
+              <input id="shipName" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label for="shipEmail" class="form-label">Email</label>
+              <input id="shipEmail" type="email" class="form-control" required>
+            </div>
+            <div class="col-12">
+              <label for="shipAddress" class="form-label">Address</label>
+              <input id="shipAddress" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label for="shipCity" class="form-label">City</label>
+              <input id="shipCity" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+              <label for="shipState" class="form-label">State</label>
+              <input id="shipState" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label for="shipZip" class="form-label">ZIP</label>
+              <input id="shipZip" class="form-control" required>
+            </div>
+          </div>
+          <div class="mt-3">
+            <button id="toPayment" type="button" class="btn btn-accent">Continue to Payment</button>
+          </div>
+        </section>
+
+        <!-- Step 2: Payment -->
+        <section id="step2" class="d-none">
+          <h5>Payment</h5>
+          <p class="small">This demo uses a fake card input. In production integrate Stripe (or other gateway) using secure server-side code.</p>
+
+          <div class="mb-2">
+            <label for="cardName" class="form-label">Name on card</label>
+            <input id="cardName" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label for="cardNumber" class="form-label">Card number</label>
+            <input id="cardNumber" class="form-control" placeholder="4242 4242 4242 4242" required>
+          </div>
+          <div class="row g-2">
+            <div class="col-md-4">
+              <label for="cardExp" class="form-label">Exp</label>
+              <input id="cardExp" class="form-control" placeholder="MM/YY" required>
+            </div>
+            <div class="col-md-4">
+              <label for="cardCvc" class="form-label">CVC</label>
+              <input id="cardCvc" class="form-control" placeholder="CVC" required>
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+              <button id="toReview" type="button" class="btn btn-accent w-100">Review Order</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step 3: Review -->
+        <section id="step3" class="d-none">
+          <h5>Review Order</h5>
+          <div id="checkoutSummary" class="mb-3"></div>
+          <div class="d-flex gap-2">
+            <button id="backToPayment" type="button" class="btn btn-outline-secondary">Back</button>
+            <button id="placeOrder" type="submit" class="btn btn-accent">Place Order</button>
+          </div>
+        </section>
+      </form>
+    </div>
+  </main>
+
+  <!-- Modal for success -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3 text-center">
+        <h5>Order Confirmed</h5>
+        <p id="orderInfo"></p>
+        <a href="thankyou.html" class="btn btn-accent">Go to Thank You Page</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center small">© <span id="curYear5"></span> UrbanThread</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
