@@ -1,290 +1,287 @@
-<!doctype html>
+<!-- Save as index.html and open in any modern browser. No server required. You can host on GitHub Pages/Netlify/Vercel. -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UrbanThread — Elevate Your Streetwear</title>
-  <meta name="description" content="UrbanThread — high-quality graphic T-shirts. Streetwear inspired tees for men & women." />
-  <meta name="theme-color" content="#00A896" />
-  <!-- SEO/OpenGraph -->
-  <meta property="og:title" content="UrbanThread — Elevate Your Style" />
-  <meta property="og:description" content="High-quality graphic T-shirts inspired by the streets." />
-  <meta property="og:image" content="assets/images/placeholder1.jpg" />
-  <link rel="icon" href="assets/images/placeholder1.jpg" />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap 5 (CDN) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Main styles -->
-  <link rel="stylesheet" href="assets/css/styles.css">
-
-  <!-- Accessibility -->
-  <meta name="robots" content="index,follow" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MOJO Services - PDF Editor & Tools</title>
+<meta name="description" content="Fast, secure PDF editing, image conversion, compression, merge, split, and e-sign tools. No downloads required.">
+<meta property="og:title" content="MOJO Services - PDF Editor & Tools">
+<meta property="og:description" content="Transform your documents effortlessly with MOJO.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#1E3A8A; --accent:#3B82F6; --bg:#F8FAFC; --ink:#0f172a; --muted:#475569;
+  --card:#ffffff; --radius:12px; --shadow:0 10px 30px rgba(2,6,23,.08);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1100px,92%);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border:0;border-radius:var(--radius);cursor:pointer;background:var(--accent);color:#fff;box-shadow:var(--shadow);transition:.2s transform,.2s box-shadow}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(59,130,246,.25)}
+.btn.ghost{background:#fff;color:var(--primary);border:1px solid rgba(30,58,138,.2)}
+/* NAV */
+.nav{position:fixed;inset:auto 0 0 0;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(2,6,23,.06);z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+.logo{font-weight:800;letter-spacing:.2px;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.menu{display:flex;gap:1rem;align-items:center}
+.menu a{color:var(--muted);font-weight:600}
+.menu .btn{padding:.6rem .9rem}
+.hamb{display:none;border:1px solid rgba(2,6,23,.1);background:#fff;border-radius:10px;width:40px;height:40px;display:grid;place-items:center}
+.hamb svg{width:18px;height:18px}
+@media (max-width:768px){
+  .menu{display:none;position:fixed;right:4%;top:64px;flex-direction:column;background:#fff;border:1px solid rgba(2,6,23,.06);border-radius:12px;padding:10px;width:min(260px,92%);box-shadow:var(--shadow)}
+  .menu.open{display:flex}
+}
+/* HERO */
+.hero{padding-top:90px;background:linear-gradient(180deg,#eaf2ff, #f6f9ff 40%, transparent), radial-gradient(1000px 420px at 90% -10%, rgba(59,130,246,.18), transparent 60%), linear-gradient(180deg,transparent,transparent)}
+.hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:3rem 0}
+@media (max-width:1024px){.hero-wrap{grid-template-columns:1fr}}
+.h1{font-size:clamp(1.9rem,4vw,3rem);line-height:1.12;margin:.25rem 0 .5rem}
+.sub{color:var(--muted);max-width:48ch;margin-bottom:1rem}
+.hero-art{justify-self:center;background:#fff;border:1px dashed rgba(59,130,246,.35);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+/* SERVICES */
+.section{padding:64px 0}
+.grid{display:grid;gap:1rem}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1024px){.grid.cols-3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:768px){.grid.cols-3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid rgba(2,6,23,.06);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);transition:.2s transform,.2s box-shadow}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(2,6,23,.12)}
+.card h3{margin:.5rem 0}
+.card p{color:var(--muted);font-size:.95rem;margin:.5rem 0 1rem}
+.icon{width:28px;height:28px;color:var(--accent)}
+/* HOW IT WORKS */
+.steps{display:grid;gap:1rem;grid-template-columns:repeat(4,1fr)}
+@media (max-width:1024px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:768px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid rgba(2,6,23,.06);border-radius:var(--radius);padding:1rem}
+.badge{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:999px;background:rgba(59,130,246,.12);color:var(--primary);font-weight:800}
+/* TESTIMONIALS */
+.testi{position:relative;background:#fff;border:1px solid rgba(2,6,23,.06);border-radius:var(--radius);padding:1rem;overflow:hidden}
+.slider{display:flex;transition:transform .5s ease}
+.slide{min-width:100%;padding:.5rem}
+.quote{font-style:italic}
+.stars{color:#fbbf24}
+.arrows{position:absolute;inset:auto 0 8px 0;display:flex;justify-content:space-between;pointer-events:none}
+.arrows button{pointer-events:auto;border:1px solid rgba(2,6,23,.12);background:#fff;border-radius:10px;padding:.4rem .6rem}
+/* FOOTER */
+footer{border-top:1px solid rgba(2,6,23,.06);padding:32px 0;color:var(--muted)}
+footer a{color:var(--muted)}
+/* EFFECTS */
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.reveal.show{opacity:1;transform:none}
+.focus-ring:focus{outline:2px solid var(--accent);outline-offset:2px;border-radius:10px}
+/* tiny utility */
+.mt-1{margin-top:.5rem}.mt-2{margin-top:1rem}.mb-0{margin-bottom:0}.center{text-align:center}
+</style>
 </head>
-<body class="light-mode" data-page="home">
-  <!-- Navbar (sticky) -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom" aria-label="Main navigation">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <span class="logo-mark" aria-hidden="true">UT</span>
-          <span class="ms-2">UrbanThread</span>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            <li class="nav-item position-relative">
-              <a class="nav-link" href="cart.html" aria-label="Cart">
-                Cart <span id="cart-badge" class="badge bg-accent">0</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Account</a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                <li><a class="dropdown-item" href="#" id="loginBtn">Login / Register</a></li>
-                <li><a class="dropdown-item" href="account.html">My Account</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/admin" id="adminLink">Admin</a></li>
-              </ul>
-            </li>
-            <li class="nav-item d-flex align-items-center ms-2">
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="darkToggle" aria-label="Toggle Dark Mode">
-                <label class="form-check-label small" for="darkToggle">Dark</label>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+<body>
+<!-- NAV -->
+<header class="nav" aria-label="Primary navigation">
+  <div class="container nav-inner">
+    <a href="#home" class="logo focus-ring" aria-label="MOJO Services Home">MOJO Services</a>
+    <button aria-label="Toggle menu" class="hamb focus-ring" id="navToggle">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18M3 12h18M3 18h18" stroke="#1E3A8A" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#home" class="focus-ring">Home</a>
+      <a href="#services" class="focus-ring">Services</a>
+      <a href="#how" class="focus-ring">How It Works</a>
+      <a href="#contact" class="focus-ring">Contact</a>
+      <a href="#services" class="btn focus-ring" aria-label="Get started">Get Started</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- Hero carousel -->
-  <main class="mb-5">
-    <section class="hero">
-      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Featured products">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/images/placeholder1.jpg" class="d-block w-100 hero-img" alt="UrbanThread Collection">
-            <div class="carousel-caption d-none d-md-block text-start">
-              <h1>Elevate Your Style with UrbanThread</h1>
-              <p class="lead">Bold designs. Premium cotton. Street-ready fit.</p>
-              <a href="shop.html" class="btn btn-accent">Shop Now</a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/placeholder2.jpg" class="d-block w-100 hero-img" alt="Graphic tees">
-            <div class="carousel-caption d-none d-md-block text-start">
-              <h1>Made For The Streets</h1>
-              <p class="lead">Limited drops, classic staples.</p>
-              <a href="shop.html" class="btn btn-outline-light">Browse Collection</a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/placeholder3.jpg" class="d-block w-100 hero-img" alt="UrbanThread feature">
-            <div class="carousel-caption d-none d-md-block text-start">
-              <h1>Comfort Meets Edge</h1>
-              <p class="lead">Sustainable cotton. Clean prints.</p>
-              <a href="shop.html" class="btn btn-accent">View Bestsellers</a>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"
-          aria-label="Previous slide">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"
-          aria-label="Next slide">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </section>
-
-    <!-- Featured products -->
-    <section class="container mt-5" aria-labelledby="featured-heading">
-      <div class="d-flex align-items-center justify-content-between">
-        <h2 id="featured-heading">Featured</h2>
-        <a href="shop.html" class="link-primary">View All</a>
-      </div>
-      <div id="featuredGrid" class="row g-3 mt-3" aria-live="polite">
-        <!-- JS injects 4-6 featured items -->
-      </div>
-    </section>
-
-    <!-- Categories -->
-    <section class="container mt-5 categories" aria-label="Shop categories">
-      <h3>Categories</h3>
-      <div class="d-flex overflow-auto py-2 gap-3">
-        <a href="shop.html?cat=men" class="card category-card p-3 text-decoration-none text-dark" role="button">Men's</a>
-        <a href="shop.html?cat=women" class="card category-card p-3 text-decoration-none text-dark" role="button">Women's</a>
-        <a href="shop.html?cat=graphic" class="card category-card p-3 text-decoration-none text-dark" role="button">Graphic</a>
-        <a href="shop.html?cat=plain" class="card category-card p-3 text-decoration-none text-dark" role="button">Plain</a>
-      </div>
-    </section>
-
-    <!-- About teaser -->
-    <section class="container mt-5" id="about-teaser">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h3>Born in the streets, designed for the bold</h3>
-          <p>UrbanThread blends raw inspiration with quality craftsmanship — premium fabrics, attention to detail, and designs that make a statement.</p>
-          <a href="about.html" class="btn btn-outline-secondary">Read More</a>
-        </div>
-        <div class="col-md-6">
-          <img src="assets/images/placeholder2.jpg" alt="UrbanThread story image" class="img-fluid rounded">
+<main id="home">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div class="reveal">
+        <h1 class="h1">Transform Your Documents Effortlessly with MOJO</h1>
+        <p class="sub">Fast, secure PDF editing, image conversion, and compression tools – all in one place. No downloads required.</p>
+        <div class="mt-2">
+          <a href="#services" class="btn focus-ring" aria-label="Start editing now">Start Editing Now</a>
+          <a href="#how" class="btn ghost focus-ring" aria-label="Learn how it works">How it Works</a>
         </div>
       </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="container mt-5" aria-labelledby="testimonials-heading">
-      <h3 id="testimonials-heading">What customers say</h3>
-      <div id="testCarousel" class="carousel slide mt-3" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <blockquote class="blockquote">
-              <p>"Fit is perfect and fabric feels premium. UrbanThread nailed it."</p>
-              <footer class="blockquote-footer">— Alex P.</footer>
-            </blockquote>
-          </div>
-          <div class="carousel-item">
-            <blockquote class="blockquote">
-              <p>"Quick delivery and the print quality is insane."</p>
-              <footer class="blockquote-footer">— Maria S.</footer>
-            </blockquote>
-          </div>
-          <div class="carousel-item">
-            <blockquote class="blockquote">
-              <p>"Favorite tee for everyday wear. Super comfy."</p>
-              <footer class="blockquote-footer">— Jordan K.</footer>
-            </blockquote>
-          </div>
-        </div>
+      <div class="hero-art reveal" aria-hidden="true">
+        <!-- Inline SVG illustration -->
+        <svg width="260" height="180" viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1E3A8A"/><stop offset="100%" stop-color="#3B82F6"/>
+            </linearGradient>
+          </defs>
+          <rect x="14" y="18" rx="12" width="110" height="140" fill="#fff" stroke="url(#g)" stroke-width="2"/>
+          <text x="34" y="60" font-size="22" font-family="Inter" fill="#1E3A8A">PDF</text>
+          <rect x="140" y="28" rx="12" width="110" height="120" fill="#fff" stroke="#3B82F6" stroke-dasharray="6 6"/>
+          <circle cx="195" cy="86" r="26" fill="url(#g)"/>
+          <path d="M180 86h30M195 71v30" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M124 88h12" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+        </svg>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Newsletter -->
-    <section class="container mt-5 mb-5">
-      <div class="bg-light p-4 rounded">
-        <div class="row align-items-center">
-          <div class="col-md-8">
-            <h4>Join the crew</h4>
-            <p>Sign up for drops, exclusive deals and first access to new prints.</p>
-          </div>
-          <div class="col-md-4">
-            <form id="newsletterForm" class="d-flex" aria-label="Newsletter signup">
-              <input id="newsletterEmail" type="email" class="form-control me-2" placeholder="Your email" required aria-label="Email for newsletter">
-              <button class="btn btn-accent" type="submit">Subscribe</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer (shared) -->
-  <footer class="bg-dark text-white py-4">
+  <!-- SERVICES -->
+  <section id="services" class="section">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <h5>UrbanThread</h5>
-          <p class="small mb-0">Street-inspired T-shirts—designed to stand out.</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <form id="footerNewsletter" class="d-flex justify-content-center" aria-label="Footer newsletter">
-            <input type="email" class="form-control w-50 me-2" placeholder="Email" required>
-            <button class="btn btn-outline-light" type="submit">Join</button>
-          </form>
-        </div>
-        <div class="col-md-4 text-end">
-          <a href="#" class="text-white me-2" aria-label="Instagram">Instagram</a>
-          <a href="#" class="text-white me-2" aria-label="Twitter">Twitter</a>
-          <a href="privacy.html" class="text-white" aria-label="Privacy policy">Privacy</a>
-        </div>
-      </div>
-      <div class="text-center small mt-3">© <span id="curYear"></span> UrbanThread. All rights reserved.</div>
-    </div>
-  </footer>
-
-  <!-- Login/Register Modal (shared) -->
-  <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Account</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div id="authForms">
-            <!-- Login form -->
-            <form id="loginForm" class="mb-3" aria-label="Login form">
-              <div class="mb-2">
-                <label for="loginEmail" class="form-label">Email</label>
-                <input id="loginEmail" type="email" class="form-control" required>
-              </div>
-              <div class="mb-2">
-                <label for="loginPassword" class="form-label">Password</label>
-                <input id="loginPassword" type="password" class="form-control" required>
-              </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-accent" type="submit">Login</button>
-                <a href="#" id="showRegister">Create account</a>
-              </div>
-            </form>
-
-            <!-- Register form -->
-            <form id="registerForm" class="d-none" aria-label="Register form">
-              <div class="mb-2">
-                <label for="regName" class="form-label">Full name</label>
-                <input id="regName" type="text" class="form-control" required>
-              </div>
-              <div class="mb-2">
-                <label for="regEmail" class="form-label">Email</label>
-                <input id="regEmail" type="email" class="form-control" required>
-              </div>
-              <div class="mb-2">
-                <label for="regPassword" class="form-label">Password</label>
-                <input id="regPassword" type="password" class="form-control" required minlength="6">
-              </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <button class="btn btn-accent" type="submit">Create Account</button>
-                <a href="#" id="showLogin">Have an account?</a>
-              </div>
-            </form>
+      <h2 class="center h1" style="font-size:1.8rem">Our Tools</h2>
+      <p class="center sub">Six focused utilities to handle your day-to-day docs.</p>
+      <div class="grid cols-3 mt-2">
+        <!-- Card template repeated -->
+        <article class="card reveal">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 4h7l5 5v11H6z"/><path d="M13 4v6h6"/></svg>
           </div>
-          <div id="authMsg" class="mt-2 text-center small"></div>
+          <h3>PDF Editor</h3>
+          <p>Edit text, add annotations, and rearrange pages.</p>
+          <button class="btn focus-ring" data-tool="PDF Editor">Try Now</button>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+          <h3>Image to PDF</h3>
+          <p>Convert JPG/PNG (single or multiple) into a PDF.</p>
+          <button class="btn focus-ring" data-tool="Image to PDF">Try Now</button>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6"/><path d="M14 3h7v7"/><path d="M14 10L21 3"/></svg></div>
+          <h3>Compress PDF</h3>
+          <p>Reduce file size up to 90% without losing visual quality.</p>
+          <button class="btn focus-ring" data-tool="Compress PDF">Try Now</button>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h3>Merge PDFs</h3>
+          <p>Combine multiple PDFs into one seamless file.</p>
+          <button class="btn focus-ring" data-tool="Merge PDFs">Try Now</button>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16v16H4z"/><path d="M12 4v16"/></svg></div>
+          <h3>Split PDF</h3>
+          <p>Extract selected pages or ranges into new PDFs.</p>
+          <button class="btn focus-ring" data-tool="Split PDF">Try Now</button>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20h16V4H4v16z"/><path d="M7 13l3 3 7-7"/></svg></div>
+          <h3>Add Signature</h3>
+          <p>Digitally sign PDFs with drag-and-drop ease.</p>
+          <button class="btn focus-ring" data-tool="Add Signature">Try Now</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section">
+    <div class="container">
+      <h2 class="center h1" style="font-size:1.8rem">How It Works</h2>
+      <div class="steps mt-2">
+        <div class="step reveal"><span class="badge" aria-hidden="true">1</span><h3>Upload</h3><p class="mb-0">Choose a file or drag & drop into the tool.</p></div>
+        <div class="step reveal"><span class="badge" aria-hidden="true">2</span><h3>Select Tool</h3><p class="mb-0">Pick edit, convert, compress, merge, split, or sign.</p></div>
+        <div class="step reveal"><span class="badge" aria-hidden="true">3</span><h3>Customize</h3><p class="mb-0">Adjust pages, quality, order, or signature placement.</p></div>
+        <div class="step reveal"><span class="badge" aria-hidden="true">4</span><h3>Download</h3><p class="mb-0">Get your processed file instantly—private & secure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="center h1" style="font-size:1.8rem">What Users Say</h2>
+      <div class="testi mt-2 reveal" aria-roledescription="carousel">
+        <div class="slider" id="slider">
+          <figure class="slide">
+            <blockquote class="quote">“Saved me hours! The merge and compress tools are perfect.”</blockquote>
+            <figcaption><strong>Alex T.</strong> · Designer <span class="stars">★★★★★</span></figcaption>
+          </figure>
+          <figure class="slide">
+            <blockquote class="quote">“Clean UI, loads fast, and no installs. Exactly what I needed.”</blockquote>
+            <figcaption><strong>Rina S.</strong> · Researcher <span class="stars">★★★★★</span></figcaption>
+          </figure>
+          <figure class="slide">
+            <blockquote class="quote">“Signing PDFs from my phone felt effortless. Great job!”</blockquote>
+            <figcaption><strong>Jamal K.</strong> · Consultant <span class="stars">★★★★★</span></figcaption>
+          </figure>
+        </div>
+        <div class="arrows">
+          <button aria-label="Previous" id="prev">‹</button>
+          <button aria-label="Next" id="next">›</button>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+</main>
 
-  <!-- Order success modal (reused) -->
-  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content p-3 text-center">
-        <h5 id="successTitle">Success</h5>
-        <p id="successMsg"></p>
-        <button class="btn btn-accent" data-bs-dismiss="modal">Close</button>
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="grid" style="gap:.5rem">
+      <div><strong>Contact</strong>: <a href="mailto:support@mojoservices.com">support@mojoservices.com</a></div>
+      <div>
+        <a href="#" aria-label="Twitter" class="focus-ring" style="margin-right:.5rem">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.8c-.7.3-1.4.5-2.2.6c.8-.5 1.3-1.2 1.6-2.1c-.7.4-1.6.8-2.5.9c-.7-.8-1.7-1.2-2.8-1.2c-2.2 0-3.9 2-3.4 4.1C9 8 6.3 6.6 4.6 4.4c-.9 1.6-.4 3.8 1.2 4.8c-.6 0-1.1-.2-1.6-.4c0 1.8 1.2 3.4 3.1 3.7c-.5.1-1 .2-1.5.1c.4 1.4 1.8 2.4 3.4 2.4c-1.3 1-3 1.6-4.7 1.6c-.3 0-.6 0-.9-.1c1.7 1.1 3.7 1.8 5.9 1.8c7.1 0 11.1-6.1 10.9-11.5c.7-.5 1.3-1.1 1.7-1.8z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="focus-ring">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0zM8 8h4.8v2.2h.1c.7-1.3 2.5-2.7 5.2-2.7C22.6 7.5 24 10 24 14.1V24h-5v-8.8c0-2.1-.8-3.6-2.6-3.6c-1.4 0-2.2.9-2.6 1.8c-.1.3-.1.8-.1 1.2V24H8V8z"/></svg>
+        </a>
       </div>
+      <div class="mt-1">© 2025 MOJO Services · <a href="#">Privacy</a> · <a href="#">Terms</a></div>
     </div>
   </div>
+</footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/products-data.js"></script>
-  <script src="assets/js/main.js"></script>
+<!-- DEMO MODAL -->
+<dialog id="modal" aria-label="Upload demo" style="border:0;max-width:520px;width:92%;border-radius:14px;box-shadow:var(--shadow);padding:0">
+  <form method="dialog" style="padding:1rem;background:#fff;border-radius:14px;border:1px solid rgba(2,6,23,.06)">
+    <h3 id="modalTitle" class="mb-0">Upload</h3>
+    <p class="sub mt-1">This is a demo. Choose a file to simulate an upload.</p>
+    <input type="file" class="focus-ring" aria-label="Choose file" style="width:100%;padding:.6rem;border-radius:10px;border:1px solid rgba(2,6,23,.15)">
+    <div class="mt-2" style="display:flex;gap:.5rem;justify-content:flex-end">
+      <button class="btn ghost">Cancel</button>
+      <button class="btn" id="modalGo">Upload</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+/* Smooth nav toggle */
+const navBtn=document.getElementById('navToggle'),menu=document.getElementById('menu');
+navBtn.addEventListener('click',()=>menu.classList.toggle('open'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+/* IntersectionObserver fade-ins */
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} }),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Demo modal for Services */
+const modal=document.getElementById('modal'),title=document.getElementById('modalTitle'),go=document.getElementById('modalGo');
+document.querySelectorAll('[data-tool]').forEach(btn=>{
+  btn.addEventListener('click',()=>{ title.textContent=btn.dataset.tool; modal.showModal(); });
+});
+go.addEventListener('click',(e)=>{ e.preventDefault(); alert('Upload simulated'); modal.close(); });
+modal.addEventListener('click',(e)=>{ const r=modal.getBoundingClientRect(); if(!(e.clientX>r.left&&e.clientX<r.right&&e.clientY>r.top&&e.clientY<r.bottom)) modal.close(); });
+
+/* Testimonials slider (auto + arrows) */
+const slider=document.getElementById('slider'); let idx=0, n=slider.children.length;
+function show(i){ idx=(i+n)%n; slider.style.transform=`translateX(-${idx*100}%)`; }
+document.getElementById('prev').onclick=()=>show(idx-1);
+document.getElementById('next').onclick=()=>show(idx+1);
+let t=setInterval(()=>show(idx+1),5000);
+slider.addEventListener('mouseenter',()=>clearInterval(t));
+slider.addEventListener('mouseleave',()=>t=setInterval(()=>show(idx+1),5000));
+</script>
 </body>
 </html>
